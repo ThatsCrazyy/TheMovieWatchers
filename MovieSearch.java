@@ -897,6 +897,8 @@ public class MovieSearch {
 
 
 
+
+
     private static void addToFavorites(int movieId, String movieTitle) {
         try {
             if (!doesMovieExist(movieId)) {
@@ -954,6 +956,14 @@ public class MovieSearch {
 
 
 
+
+
+
+
+
+
+
+
     private static boolean doesUserMovieExist(int userId, String movieTitle) {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
             String query = "SELECT COUNT(*) AS count FROM UserMovies WHERE UserID = ? AND Title = ?";
@@ -972,6 +982,12 @@ public class MovieSearch {
         }
         return false;
     }
+
+
+
+
+
+
 
 
 
@@ -1010,6 +1026,14 @@ public class MovieSearch {
 
 
 
+
+
+
+
+
+
+
+
     // Method to add a movie to the Movies table
     private static void addMovieToDatabase(int movieId, String movieTitle, String director, String releaseDate) {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
@@ -1026,6 +1050,15 @@ public class MovieSearch {
             ex.printStackTrace();
         }
     }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1121,6 +1154,17 @@ public class MovieSearch {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
     private static void viewFavorites() {
         try (Connection connection = DriverManager.getConnection(DB_URL, USER, PASSWORD)) {
             String query = "SELECT UserMovieID, Title, UserRating FROM UserMovies WHERE UserID = ?";
@@ -1201,6 +1245,14 @@ public class MovieSearch {
 
 
 
+
+
+
+
+
+
+
+    
 
 
 
